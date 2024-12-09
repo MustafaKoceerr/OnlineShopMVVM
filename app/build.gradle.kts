@@ -6,7 +6,7 @@ plugins {
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.dagger.hilt.android")
     id("kotlin-parcelize")
-
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -51,6 +51,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.firebase.database)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -114,6 +115,8 @@ dependencies {
 
     // KOTLIN COROUTINES
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+// https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-play-services
+    runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.9.0")
 
     // OKHTTP Interceptor
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
